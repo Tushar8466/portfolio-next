@@ -1,65 +1,143 @@
-import Image from "next/image";
+"use client";
+import PixelSnow from "@/components/PixelSnow";
+import CardNav from "@/components/CardNav";
+import Shuffle from "@/components/Shuffle";
 
-export default function Home() {
+function page() {
+  const items = [
+    {
+      label: "About",
+      bgColor: "#1B1722",
+      textColor: "#fff",
+      links: [
+        {
+          label: "Company",
+          href: "/about/company",
+          ariaLabel: "About Company",
+        },
+        {
+          label: "Careers",
+          href: "/about/careers",
+          ariaLabel: "About Careers",
+        },
+      ],
+    },
+    {
+      label: "Projects",
+      bgColor: "#2F293A",
+      textColor: "#fff",
+      links: [
+        {
+          label: "Featured",
+          href: "/projects/featured",
+          ariaLabel: "Featured Projects",
+        },
+        {
+          label: "Case Studies",
+          href: "/projects/case-studies",
+          ariaLabel: "Project Case Studies",
+        },
+      ],
+    },
+    {
+      label: "Contact",
+      bgColor: "#2F293A",
+      textColor: "#fff",
+      links: [
+        { label: "Email", href: "/contact/email", ariaLabel: "Email us" },
+      ],
+    },
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <PixelSnow
+          color="#ffffff"
+          flakeSize={0.01}
+          minFlakeSize={1.25}
+          pixelResolution={200}
+          speed={1.25}
+          density={0.3}
+          direction={125}
+          brightness={1}
+          depthFade={8}
+          farPlane={20}
+          gamma={0.4545}
+          variant="square"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+      <div
+        style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 20 }}
+      >
+        <CardNav
+          logo=""
+          logoAlt="Tushar Singla"
+          items={items}
+          baseColor="#fff"
+          menuColor="#000"
+          buttonBgColor="#111"
+          buttonTextColor="#fff"
+          ease="power3.out"
+          theme="light"
+        />
+      </div>
+
+      <div
+        style={{ position: "absolute", inset: 0, zIndex: 10 }}
+        className="flex flex-col items-center justify-center gap-6"
+      >
+        <Shuffle
+          text="Hi, My name is Tushar Singla"
+          tag="h1"
+          className="text-center"
+          style={{
+            fontFamily: "'Press Start 2P', cursive",
+            fontSize: "3rem",
+            color: "#a855f7",
+          }}
+          shuffleDirection="down"
+          duration={0.8}
+          shuffleTimes={8}
+        />
+        <Shuffle
+          text="Full Stack Developer"
+          tag="p"
+          className="text-center"
+          style={{
+            fontFamily: "'Press Start 2P', cursive",
+            fontSize: "1.5rem",
+            color: "#ffffff",
+            marginTop: '25px'
+          }}
+          shuffleDirection="up"
+          duration={0.6}
+          shuffleTimes={6}
+        />
+        <button
+          style={{
+            fontFamily: "'Press Start 2P', cursive",
+            fontSize: "1rem",
+            border: "2px solid #a855f7",
+            color: "#a855f7",
+            padding: "20px 30px",
+            background: "transparent",
+            cursor: "pointer",
+            marginTop: "30px"
+          }}
+        >
+          View My Work
+        </button>
+      </div>
     </div>
   );
 }
+
+export default page;
