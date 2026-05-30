@@ -86,7 +86,6 @@ function page() {
           buttonBgColor="#111"
           buttonTextColor="#fff"
           ease="power3.out"
-          theme="light"
         />
       </div>
 
