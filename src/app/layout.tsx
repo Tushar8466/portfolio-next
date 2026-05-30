@@ -1,5 +1,6 @@
 import { Press_Start_2P, VT323 } from 'next/font/google'
 import './globals.css'
+import SplashCursor from '@/components/Splashcursor'
 
 const pressStart = Press_Start_2P({
   weight: '400',
@@ -16,7 +17,8 @@ const vt323 = VT323({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${pressStart.variable} ${vt323.variable}`}>
+      <body className={`${pressStart.variable} ${vt323.variable}`}> 
+        <SplashCursor RAINBOW_MODE={true} />
         {children}
       </body>
     </html>

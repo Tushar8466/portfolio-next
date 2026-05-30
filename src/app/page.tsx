@@ -1,12 +1,15 @@
 'use client'
-import HeroSection from "@/components/HeroSection"
+import { useRef } from 'react'
+import HeroSection from '@/components/HeroSection'
+import ScrollCursor from '@/components/ScrollCursor'
+import TechStack from '@/components/TechStacks'
 
-function page() {
+export default function page() {
+  const heroRef = useRef<HTMLDivElement>(null)
+
   return (
-    <div>
-      <HeroSection />
-    </div>
+    <div style={{ overflowY: 'scroll', height: '100vh' }}>
+        <HeroSection />
+      </div>
   )
 }
-
-export default page
