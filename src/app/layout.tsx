@@ -57,7 +57,7 @@ export default function RootLayout({
       <body className={`${pressStart.variable} ${vt323.variable}`}>
         <BubbleMenu
           logo={
-            <span style={{ fontWeight: 700, color: "black" }}>
+            <span style={{ fontWeight: 700, color: "black"  }}>
               Tushar Singla
             </span>
           }
