@@ -1,9 +1,6 @@
 "use client";
 import { useRef } from "react";
 import HeroSection from "@/components/HeroSection";
-import ScrollCursor from "@/components/ScrollCursor";
-import TechStack from "@/components/TechStacks";
-import CardNav from "@/components/CardNav";
 import BubbleMenu from "@/components/BubbleMenu";
 
 export default function page() {
