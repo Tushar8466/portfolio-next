@@ -3,6 +3,7 @@ import { Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
 import BubbleMenu from "@/components/BubbleMenu";
 import SplashCursor from "@/components/Splashcursor";
+import { Cormorant_Garamond } from "next/font/google";
 
 const pressStart = Press_Start_2P({
   weight: "400",
@@ -16,30 +17,36 @@ const vt323 = VT323({
   variable: "--font-vt323",
 });
 
+const cormorant = Cormorant_Garamond({
+  weight: ["300", "400", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-cormorant",
+});
+
 const items = [
   {
-    label: "home",
+    label: "Home",
     href: "/",
     ariaLabel: "Home",
     rotation: -8,
     hoverStyles: { bgColor: "#3b82f6", textColor: "#ffffff" },
   },
   {
-    label: "about",
+    label: "About",
     href: "/about",
     ariaLabel: "About",
     rotation: 8,
     hoverStyles: { bgColor: "#10b981", textColor: "#ffffff" },
   },
   {
-    label: "projects",
+    label: "Projects",
     href: "/projects",
     ariaLabel: "Projects",
     rotation: 8,
     hoverStyles: { bgColor: "#f59e0b", textColor: "#ffffff" },
   },
   {
-    label: "contact",
+    label: "Contact",
     href: "/contact",
     ariaLabel: "Contact",
     rotation: -8,
@@ -54,10 +61,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${pressStart.variable} ${vt323.variable}`}>
+      <body
+        className={`${pressStart.variable} ${vt323.variable}`}
+        style={{
+          margin: 0,
+          padding: 0,
+          background: "#000",
+          fontFamily: "'Cormorant Garamond', serif",
+        }}
+      >
         <BubbleMenu
           logo={
-            <span style={{ fontWeight: 700, color: "black"  }}>
+            <span style={{ fontWeight: 700, color: "black" }}>
               Tushar Singla
             </span>
           }
