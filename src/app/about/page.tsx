@@ -1,5 +1,6 @@
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { CanvasText } from "@/components/ui/canvas-text";
 
 export default function AboutPage() {
   const data = [
@@ -159,19 +160,38 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="bg-neutral-950 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8 flex flex-col items-center text-center">
-        <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tight">
-          About <span className="text-neutral-500">Me.</span>
-        </h1>
-        <p className="text-neutral-400 text-lg md:text-xl max-w-2xl leading-relaxed">
-          I&apos;m a Full-Stack Developer and engineering student at Newton
-          School of Technology. I specialize in building polished user
-          interfaces and scalable backend systems, driven by a passion for clean
-          code and creative problem-solving.
-        </p>
+    <div className="bg-black min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+        {/* Styled Header matching the image */}
+        <div className="w-full flex flex-col items-center justify-center py-12 md:py-24 select-none">
+          <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter leading-[0.8] uppercase text-center italic">
+            <span className="text-neutral-800 block">About</span>
+            <span className="relative block text-blue-600">
+              Me.
+              {/* Scanline/Stripe effect overlay */}
+              <span
+                className="absolute inset-0 pointer-events-none opacity-40"
+                style={{
+                  background:
+                    "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.8) 2px, rgba(0,0,0,0.8) 4px)",
+                }}
+              />
+            </span>
+          </h1>
+        </div>
+
+        {/* Centered description */}
+        <div className="flex flex-col items-center text-center -mt-4 pb-16">
+          <p className="text-neutral-400 text-lg md:text-xl max-w-2xl leading-relaxed">
+            I&apos;m a Full-Stack Developer and engineering student at Newton
+            School of Technology. I specialize in building polished user
+            interfaces and scalable backend systems, driven by a passion for
+            clean code and creative problem-solving.
+          </p>
+        </div>
       </div>
-      <div className="w-full overflow-clip">
+
+      <div className="w-full overflow-clip border-t border-white/5 bg-neutral-950/50">
         <Timeline data={data} />
       </div>
     </div>
