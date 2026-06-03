@@ -67,7 +67,6 @@ export default function RootLayout({
           margin: 0,
           padding: 0,
           background: "#000",
-          fontFamily: "'Cormorant Garamond', serif",
         }}
       >
         <BubbleMenu
